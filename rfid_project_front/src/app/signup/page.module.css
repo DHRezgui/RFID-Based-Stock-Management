@@ -1,0 +1,29 @@
+.page{
+    background-image: url("/backgrounds/background15.jpg");
+}
+.body {
+  background-color: #f5f5f5;
+}
+
+.card {
+  border-radius: 12px;
+}
+.customButton {
+  background-color: #A8BFA0;
+  border-color: #A8BFA0;
+}
+
+.customButton:hover {
+  background-color: 	#7A926F;
+  border-color: 	#7A926F;
+}
+
+.customLink {
+  color: #5F7355;
+  text-decoration: none;
+}
+
+.customLink:hover {
+  color: #94aa8c;
+  text-decoration: underline;
+}

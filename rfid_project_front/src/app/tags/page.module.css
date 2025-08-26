@@ -1,0 +1,38 @@
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  min-height: 100svh;
+  max-width: none;
+  margin: 0 auto;
+  gap: 64px;
+  font-family: var(--font-geist-sans, Arial, sans-serif);
+  color: #A8BFA0;
+  background-image: url("/backgrounds/background14.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+.header{
+  border: #1a1a1a;
+  background-color: #2E2E2E;
+  
+}

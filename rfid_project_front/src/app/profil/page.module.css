@@ -1,0 +1,40 @@
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  min-height: 100svh;
+  max-width: none;
+  margin: 0 auto;
+  padding: 80px;
+  gap: 64px;
+  font-family: var(--font-geist-sans, Arial, sans-serif);
+  background-image: url("/backgrounds/background15.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  border-radius: 12px;
+  background-color: white;
+}
+
+.customButton {
+  background-color: #a8bfa0;
+  border-color: #a8bfa0;
+}
+
+.customButton:hover {
+  background-color: #7a926f;
+  border-color: #7a926f;
+}
+
+.customLink {
+  color: #5f7355;
+  text-decoration: none;
+}
+
+.customLink:hover {
+  color: #94aa8c;
+  text-decoration: underline;
+}

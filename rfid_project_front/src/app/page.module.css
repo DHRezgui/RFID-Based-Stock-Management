@@ -1,0 +1,262 @@
+/* Variables globales */
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  min-height: 100svh;
+  max-width: none;
+  margin: 0 auto;
+  padding: 80px;
+  gap: 64px;
+  font-family: var(--font-geist-sans, Arial, sans-serif);
+  background-image: url("/backgrounds/background1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+/* Contenu principal */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-row-start: 2;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.main ol {
+  font-family: var(--font-geist-mono, monospace);
+  padding-left: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  list-style-position: inside;
+}
+
+.main li:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+
+.main code {
+  font-family: inherit;
+  background: var(--gray-alpha-100);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Boutons */
+.ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctas a {
+  appearance: none;
+  border-radius: 128px;
+  height: 48px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a.primary {
+  background: var(--foreground, #000);
+  color: var(--background, #fff);
+  gap: 8px;
+}
+
+a.secondary {
+  border-color: var(--gray-alpha-200);
+  min-width: 158px;
+  color: #F5F5F5;
+  background: transparent;
+}
+
+/* Footer - ici tu peux adapter ou retirer si inutilisé */
+.footer {
+  grid-row-start: 3;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer img {
+  flex-shrink: 0;
+}
+
+/* Hover uniquement sur devices non tactiles */
+@media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  a.secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 600px) {
+  .page {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 80px;
+    padding-top: 40px;
+    gap: 32px;
+  }
+
+  .main {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .main ol {
+    text-align: center;
+  }
+
+  .ctas {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ctas a {
+    width: 100%;
+    font-size: 14px;
+    height: 40px;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  a.secondary {
+    min-width: auto;
+  }
+
+  .footer {
+    gap: 16px;
+    justify-content: center;
+  }
+}
+
+/* Logo en bas à gauche */
+.logo {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+}
+
+/* User logo en haut à droite */
+.userLogo {
+  position: fixed;
+  top: 20px;
+  right: 5px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .logo,
+  .userLogo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo,
+  .userLogo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Mode sombre sur logo (si tu veux inverser) */
+@media (prefers-color-scheme: dark) {
+  .logo,
+  .userLogo {
+    filter: none;
+  }
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #F5F5F5;
+  max-width: 800px;
+}
+
+.highlight {
+  color: #33CC00; /* or your brand color */
+}
+
+/* Optional: Responsive adjustment */
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.5rem;
+    padding: 0 12px;
+  }
+}
