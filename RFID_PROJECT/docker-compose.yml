@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_spring
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: www.96880887.eminem12
+      MYSQL_DATABASE: rfid_tag
+    volumes:
+      - mysqldb:/var/lib/mysql
+
+volumes:
+  mysqldb: {}
