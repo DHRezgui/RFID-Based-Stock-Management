@@ -1,3 +1,5 @@
+# RFID-Based-Stock-Management
+
 RFID-based Tag and Product Management System built with Spring Boot (backend) and React (frontend).  
 The system integrates RFID readers (CS108, CS203) to capture and store tag data, associate products with tags,  
 and provide a web interface for stock management, authentication (JWT), and user management.  
